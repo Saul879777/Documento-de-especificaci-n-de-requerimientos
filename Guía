@@ -1,0 +1,182 @@
+Tabla de contenido
+1.Introducción ............................................................................................................................... 2
+1.1 Propósito ............................................................................................................................. 2
+1.1 Ámbito del Sistema ....................................................................................................... 2
+2. Descripción General .................................................................................................................. 3
+2.1 Perspectiva del Producto ................................................................................................ 3
+2.2 Funciones del Producto ....................................................................................................... 3
+2.3 Características de los usuarios: ........................................................................................... 4
+2.4 Restricciones: ...................................................................................................................... 4
+2.5 Suposiciones y Dependencias ............................................................................................. 4
+2.6 Requisitos Futuros: .............................................................................................................. 5
+3 Requisitos Específicos ................................................................................................................ 5
+3.1 Interfaces Externas .............................................................................................................. 5
+3.2 Funciones ............................................................................................................................ 5
+3.3 Restricciones de Rendimiento ............................................................................................. 6
+3.4 Restricciones de Diseño ...................................................................................................... 6
+3.5 Atributos del Sistema .......................................................................................................... 6
+1.Introducción
+1.1 Propósito
+En este documento se va a añadir toda la información referente a la gestión de la “Fundación
+CBG” para gestionar su club deportivo de baloncesto.
+El documento está dirigido tanto al grupo de desarrolladores como al propio cliente que no
+pidió la realización de este software.
+1.1 Ámbito del Sistema
+Al sistema se le va a asignar el nombre de “Gestión Fundación CBG”, ya que va a estar
+destinado a gestionar la administración de:
+ Alumnos.
+ Entrenamientos.
+ Pistas de entrenamiento.
+ Ligas.
+ Partidos.
+ Pagos de inscripciones.
+ Material deportivo.
+ Notificaciones.
+ Estadísticas por jugador y partido.
+ Entrenadores.
+ Equipos.
+ Categorías( Femeninas y másculinas).
+ Control de acceso con distintos privilegios:
+o Personal oficina.
+o Entrenadores.
+ Clasificación
+ Gestión usuarios en el sistema
+No se va a tener en cuenta para el desarrollo del software “Gestión Fundación CBG” los
+siguientes aspectos:
+ Colaboradores y patrocinadores.
+ Gestión de pagos con el banco.
+Se desea obtener un sistema que mejore y agilice la gestión actual de la “Fundación CBG”,
+Facilitando el pago de inscripciones y la gestión del alumnado. Además como facilitar a
+nuestros Entrenadores tomar las mejores decisiones para intentar mejorar los resultados
+obtenidos por los equipos.
+2. Descripción General
+2.1 Perspectiva del Producto
+En un futuro esta software podría formar parte de un sistema más grande en el que se
+tendrían en cuenta la gestión de patrocinadores.
+2.2 Funciones del Producto
+El software que se va a desarrollar está destinado a la gestión de un club de baloncesto, y va a
+tener que contemplar la gestión de:
+ Alumnos: los alumnos deben de estar registrados en el sistema para poder inscribirlos
+en una categoría, equipo, Entrenamientos, etc.
+ Equipos: Un equipo va a contemplar a un conjunto de jugadores. Estos se irán creando
+en función del número de alumnos existentes en una categoría. Esto quiere decir que
+se añadirán al sistema bajo demanda de una determinada categoría y sexo.
+ Pistas de entrenamiento: Las pistas de entrenamiento deben ser almacenadas en el
+sistema para que puedan ser asignadas a los entrenamientos.
+ Entrenamientos: Todos los equipos del club deben tener un horario y pista de
+entrenamiento.
+ Partidos: Los partidos son los encuentros en los que se enfrentan los equipos entre si.
+En un partido participan 2 equipos.
+ Ligas: Las ligas van a ser los torneos en los que participen los equipos.
+ Pagos de inscripciones: Todos los alumnos deberán abonar una cuantía al club para
+poder realizar los entrenamientos, recibir material deportivo y participar con su
+equipo en una o varias ligas.
+ Material deportivo: El material deportivo es aquél que el club le ofrece a sus alumnos:
+chándal, equipación, cubre, etc.
+ Notificaciones: Para mantener informados a los padres de los distintas noticias que
+tienen lugar con sus hijos o con el club, el sistema enviara notificaciones a los padres
+para que estén informados.
+ Padres: El sistema tiene que tener constancia de los Padres de los alumnos para poder
+ponerse en contacto el centro con estos para diversos motivos.
+ Estadísticas: Las estadísticas pueden ser de 2 tipos:
+o De alumnos: Van a informar de cuál es la trayectoria del alumno dentro del
+club, facilitando al entrenador realizar estrategias para afrontar los partidos.
+o De Equipo: El sistema también contemplara la progresión de un equipo,
+almacenando estadísticas globales de los jugadores de su equipo.
+ Entrenadores: El sistema contendrá información acerca de las personas que se
+encargan de los entrenamientos de cada equipo, con el fin de poder asignarles
+horarios y distribuirlos entre los equipos.
+ Categorías: Las categorías van a agrupar a los alumnos en función de su edad, y por
+tanto a los equipos que pueden pertenecer estos. Las categorías se dividen por edades
+y por sexo.
+ Control de acceso: El acceso al sistema se va a realizar por 2 grupos de usuarios:
+o Personal oficina: Va a tener pleno acceso a todos los apartados del sistema.
+o Entrenadores: Van a poder solo acceder a aquellos aspectos del sistema que
+estén relacionados con los equipos y jugadores, pero no con los aquellos que
+pertenezcan a la gestión contable.
+ Clasificación: La clasificación va a servir para consultar cual es la posición que ocupan
+los equipos del club en las distintas ligas, y la del resto de equipos participantes en
+estas.
+ Gestión de usuarios en el sistema: Existirá uno o varios usuarios en el sistema a los
+que se le permita gestionar otros usuarios. Estos usuarios a los que se les dan
+privilegios como para poder gestionar a otros usuarios.
+
+2.3 Características de los usuarios:
+Por los conocimientos demostrados por la persona entrevistada, se observa que no dispone de
+conocimientos avanzados de informática. Esto implica que se deberá realizar una aplicación
+sencilla e intuitiva de manejar, facilitando su uso, ya que:
+o El sistema va a ser tratado por personas que pueden tener un nivel educacional
+mínimo de E.S.O.
+o El conocimiento de los usuarios sobre la fundación y el baloncesto, en general, va a ser
+alta.
+o Los usuarios no han manejado ningún sistema similar al que se va a desarrollar, por lo
+que su experiencia usando este tipo de software es baja.
+2.4 Restricciones:
+Pese a que se detalló claramente cuál era el objetivo del sistema que fueran los aspectos que
+tenía que gestionar la aplicación, no se impusieron casi ninguna restricción. Las restricciones
+que hay que tener son:
+o Debe ser una aplicación de escritorio.
+o No va a existir conexión permanentemente a internet.
+o Para anotar los datos de los partidos se hará uso de un ordenador portátil.
+o El sistema operativo sobre el que corra la aplicación será Windows.
+o Los recursos hardware son los ofrecidos por ordenadores personales para un uso poco
+exigente: De sobremesa y ordenadores portátiles.
+2.5 Suposiciones y Dependencias
+Suposiciones:
+o Se supone que el sistema operativo sobre el que se va a implementar, Windows, no va
+a cambiar, pero probablemente tampoco afectaría ya que suponemos inicialmente
+que se va a implementar en un sistema multiplataforma.
+o Se presupone que el software generado no va a necesitar demasiados recursos para
+ejecutarse, por lo que el hardware actual será más que suficiente.
+2.6 Requisitos Futuros:
+o El sistema en un futuro podría administrar la gestión de patrocinadores y de
+donaciones al club.
+3 Requisitos Específicos
+3.1 Interfaces Externas
+En cuanto a interfaces externas, no es necesario que el usuario utilice nada, y en cuanto al
+sistema la “única” interfaz que usará el sistema es la de intercambio de datos con la base de
+datos, lo cual es algo que contamos en las restricciones
+3.2 Funciones
+Los usuarios del sistema se van agrupar en 2 grandes conjuntos, con los siguientes roles:
+Los Secretarios: Se van a encargar de las siguientes tareas:
+o Inscripción de los alumnos, el secretario introducirá al sistema la información del
+tríptico tal y como se hacía anteriormente al sistema, para que este introduzca en el
+sistema los datos, e información del jugador inscrito, junto con la información de su
+actividad, ropa dada, precio pagado, ect
+o las altas de los equipos y de las competiciones, es decir, en las competiciones, el
+secretario interactuará con el sistema, para identificar qué competición juega cada
+equipo, y qué tipo de competición es, junto con los participantes
+o El secretario podrá revisar qué integrantes han realizado los pagos, y cuáles no,
+además de poder revisar si a algún integrante no se proporcionado aún el material
+o Podrá introducir actividades esporádicas que puedan ser como las competiciones, es
+decir que en ellas se inscriban participantes, a la hora de introducir esas actividades
+habrá que especificar de qué se trata, y el precio, ect.
+Los Entrenadores: Se van a encargar de las siguientes actividades:
+Introducir las estadísticas del partido, para ello introducirá los datos generales del
+partido y los datos de cada jugador para generar las estadísticas, y el sistema las almacenará y
+calculará las estadísticas relevantes a los jugadores y al equipo
+Podrá consultar todos los datos relativos a cada partido, o a la competición en general
+tanto de los jugadores como del equipo, y la clasificación del mismo equipo que entrena.
+El rol de Entrenador lo podrán desempeñar los usuarios con rol de secretario.
+3.3 Restricciones de Rendimiento
+El sistema no ha de soportar carga excesiva, cualquier tipo de ordenador corriente actual
+podrá soportar al sistema sin mayor esfuerzo que contener a una base de datos en uso para
+ello.
+3.4 Restricciones de Diseño
+Una de las restricciones de diseño que se han impuesto es que el cliente nos ha indicado que
+su máquina tiene Windows, y por tanto el software va a ser desarrollado para dicha
+plataforma y esta especificación deberá mantenerse inalterada para el funcionamiento del
+software a realizar.
+La aplicación se va a implementar obligatoriamente mediante un software de escritorio, por lo
+que se descarta el desarrollo web.
+La implementación del sistema se tendrá que hacer implementándola en una plataforma de
+desarrollo que no limite la funcionalidad del sistema, que este actualizada y que facilite el
+desarrollo de entornos de ventanas.
+3.5 Atributos del Sistema
+Los atributos de calidad del sistema: Fiabilidad, mantenibilidad, portabilidad, y seguridad.
+Deberá especificarse que usuarios están autorizados, o no a realizar ciertas tareas, y cómo se
+implementarán los mecanismos de seguridad ( por ejemplo con un login y un password).
+El sistema deberá estar disponible en cualquier momento que necesite ser usado por los
+usuarios, y la persona que esté de responsable del software será la única que podrá hacer un
+respaldo de la base de datos.
+El sistema solo será diseñado para Microsoft Windows.
