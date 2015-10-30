@@ -1,12 +1,34 @@
 1.	Introducción
 1.1.	Propósito
-Este documento es con el propósito de dar una especificación de Requerimientos con base en el Éstandar IEEE 830 para el sistema gestor de Servicio Social para la Facultad de Estádistica e Informática
+Este documento es con el propósito de dar una especificación de Requerimientos con base en el Estándar IEEE 830 
+para el sistema gestor de Servicio Social para la Facultad de Estadística e Informática.
 1.2.	Ámbito del sistema
+Este sistema tendrá el nombre de "Servicio Social FEI" y este estará destinado a gestionar la administración de:
+Alumnos inscritos al Servicio Social
+Expedientes virtuales para los alumnos
+Dependencias que solicitan prestadores
+Asignación de Alumnos a las Dependencias solicitantes
 1.3.	Definiciones, acrónimos y abreviaturas
+EE: Experiencia Educativa
+SS: Servicio Social
+Alumno: Alumno inscrito en el Experiencia Educativa de Servicio Social
+Dependencia: Institución que solicita alumnos
+Maestro: Titular Académico encargado del seguimiento de los alumnos
+Coordinación: Encargado de la vinculación con entidades e institución y encargado de solicitar y registrar proyectos de SS
+Academia: Compuesto por Maestro o Titulares académicos y la Coordinación
+FEI: Facultad de Estadística e Informática
 1.4.	Referencias
-1.5.	Visión general del documento
+Augur, R. M. (2000). Especificación de Requisitos Software según IEEE 830. Departament d’Informàtica.
+Coordinación de SS y ER (s.f.). https://www.uv.mx/fei/
+1.5. Visión general del documento
+Este documento consta de tres secciones. Esta sección es la introducción y proporciona una visión general del ERS. 
+En la sección 2 se da una descripción general del sistema, con el fin de conocer las principales funciones que debe realizar, 
+los datos asociados y los factores, restricciones, supuestos y dependencias que afectan al desarrollo, sin entrar en excesivos
+detalles. En la sección 3 se definen detalladamente los requisitos que debe satisfacer el sistema. 
 2.	Descripción general
 2.1.	Perspectiva del producto
+Este sistema solamente está relacionado con la aplicación que la FEI para que los alumnos escojan sus opciones para las
+Dependencias dónde harán su SS.
 2.2.	Funciones del producto
 2.3.	Características de los usuarios
 2.4.	Restricciones
@@ -19,5 +41,4 @@ Este documento es con el propósito de dar una especificación de Requerimientos
 3.4.	Restricciones de diseño
 3.5.	Atributos del sistema
 3.6.	Otros requisitos
-4.	Apéndices
 5.	Índice
