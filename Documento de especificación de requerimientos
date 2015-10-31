@@ -4,22 +4,22 @@ Este documento es con el propósito de dar una especificación de Requerimientos
 para el sistema gestor de Servicio Social para la Facultad de Estadística e Informática.
 1.2.	Ámbito del sistema
 Este sistema tendrá el nombre de "Servicio Social FEI" y este estará destinado a gestionar la administración de:
-Alumnos inscritos al Servicio Social
-Expedientes virtuales para los alumnos
-Dependencias que solicitan prestadores
-Asignación de Alumnos a las Dependencias solicitantes
+• Alumnos inscritos al Servicio Social
+• Expedientes virtuales para los alumnos
+• Dependencias que solicitan prestadores
+• Asignación de Alumnos a las Dependencias solicitantes
 1.3.	Definiciones, acrónimos y abreviaturas
-EE: Experiencia Educativa
-SS: Servicio Social
-Alumno: Alumno inscrito en el Experiencia Educativa de Servicio Social
-Dependencia: Institución que solicita alumnos
-Maestro: Titular Académico encargado del seguimiento de los alumnos
-Coordinación: Encargado de la vinculación con entidades e institución y encargado de solicitar y registrar proyectos de SS
-Academia: Compuesto por Maestro o Titulares académicos y la Coordinación
-FEI: Facultad de Estadística e Informática
+• EE: Experiencia Educativa
+• SS: Servicio Social
+• Alumno: Alumno inscrito en el Experiencia Educativa de Servicio Social
+• Dependencia: Institución que solicita alumnos
+• Maestro: Titular Académico encargado del seguimiento de los alumnos
+• Coordinación: Encargado de la vinculación con entidades e institución y encargado de solicitar y registrar proyectos de SS
+• Academia: Compuesto por Maestro o Titulares académicos y la Coordinación
+• FEI: Facultad de Estadística e Informática
 1.4.	Referencias
 Augur, R. M. (2000). Especificación de Requisitos Software según IEEE 830. Departament d’Informàtica.
-Coordinación de SS y ER (s.f.). https://www.uv.mx/fei/
+Coordinación de SS y ER (s.f.). https://www.uv.mx/fei/ss-y-er/servicio-social-2/
 1.5. Visión general del documento
 Este documento consta de tres secciones. Esta sección es la introducción y proporciona una visión general del ERS. 
 En la sección 2 se da una descripción general del sistema, con el fin de conocer las principales funciones que debe realizar, 
@@ -30,13 +30,80 @@ detalles. En la sección 3 se definen detalladamente los requisitos que debe sat
 Este sistema solamente está relacionado con la aplicación que la FEI para que los alumnos escojan sus opciones para las
 Dependencias dónde harán su SS.
 2.2.	Funciones del producto
+Las tareas que el sistema debe ser capaz de usar son las siguientes:
+•	Dar propuestas de alumnos para su asignación a dependencias
+•	Poder crear un expediente virtual para poder ser consultado por todos
+•	Facilitar la creación de reportes y oficios
+A continuación explicaremos brevemente en qué consisten estas tareas y como serán soportadas por el sistema.
+2.2.1.	Dar propuestas de alumnos para su asignación a dependencias
+Cuando la Academia se reúna, podrá ver todas las opciones que el Alumno escogió y ver las opciones para las que este 
+se encuentra más apto.
+2.2.2.	Poder crear un expediente virtual para poder ser consultado por todos
+Se llevará un expediente virtual con los archivos escaneados que se han anexado al expediente del alumno. 
+2.2.3.	Facilitar la creación de reportes y oficios
+Se podrá generar oficios y reportes para su posterior impresión y firmado por la autoridad correspondiente. 
 2.3.	Características de los usuarios
+Existen 3 tipos de usuario: el Alumno, el Titular de la Dependencia y las Personas relacionadas con la escuela
+(Maestros y Coordinación). Debido a que estos 3 tipos de usuarios no tienen la misma preparación (debido a que no han 
+estudiado lo mismo). El sistema ha de ser gráfico, con una interfaz sencilla e intuitiva, con base en las heurísticas de 
+usabilidad.
 2.4.	Restricciones
+El sistema no sustituirá a la Academia, tampoco sustituirá el firmado de reportes y oficio ya que esto está declarado en 
+el estatuto.
+Requerirá una conexión a Internet.
 2.5.	Suposiciones y dependencias
+El sistema será implementado de manera que sea multiplataforma.
+No requerirá que los usuarios tengan una preparación especial para el uso del sistema.
 2.6.	Requisitos futuros
 3.	Requisitos específicos
-3.1.	Interfaces extremas
+3.1.	Interfaces externas
 3.2.	Funciones
+Para facilitar la especificación de Requerimientos funcionales, los dividiremos por usuarios:
+•	Todos:
+RF001: El sistema deberá permitir a los usuarios registrados el inicio de sesión
+RF002: El sistema deberá permitir a los usuarios cerrar sesión
+RF003: El sistema deberá dar una opción de recuperar contraseña
+RF004: El sistema deberá tener una opción de ayuda que le dirá lo que hace cada botón y campo
+RF005: El sistema deberá permitir volver a la página principal presionando sólo un botón
+•	Sólo Titular Académico, Coordinación y Titular de dependencia
+RF006: El sistema deberá permitir consultar los expedientes de los alumnos
+Nota: El titular académico sólo podrá ver el expediente de sus alumnos asignados, el coordinador tendrá 
+acceso a todos los expedientes y el titular de dependencia solo podrá ver los alumnos registrados en su dependencia.
+•	Academia:
+RF007: El sistema deberá mostrar a la Academia las opciones que los alumnos escogieron.
+RF008: Una vez mostrada la lista de alumnos, el sistema deberá mostrar para que opción están más calificados 
+(calificación en esa área) y para la que están disponibles (que el horario de sus clases no sea el mismo que el del SS).
+RF009: Si el alumno no es apto y no tiene disponibilidad de horario el sistema deberá mostrar las opciones disponibles 
+en la escuela.
+RF010: Una vez que el la academia asigne a un alumno, las demás opciones de asignación para ese alumno deben de ser 
+bloqueadas para evitar que un alumno sea asignado a dos Dependencias.
+RF011: El sistema deberá permitir guardar los cambios, incluso si no se ha terminado de asignar a todos los alumnos.
+RF012: El sistema deberá mostrar una lista de alumnos asignados.
+RF013: El sistema deberá permitir exportar la lista de alumnos asignados a PDF para su futura impresión.
+•	Coordinación
+RF014: El sistema deberá permitir registrar las dependencias, para registrar una dependencia se necesitan los 
+siguientes datos:
+•	Nombre de la dependencia
+•	Requerimientos
+•	Encargado
+•	Dirección
+•	Número de solicitantes
+•	Horario
+•	Teléfono
+•	Correo (esta último es necesario para el registro del Titular de la dependencia en el sistema) 
+RF015: El sistema deberá mostrar una lista con las dependencias registradas.
+RF016: El sistema deberá permitir exportar la lista de dependencias a PDF.
+RF017: El sistema deberá generar una plantilla para la carta de asignación.
+•	Titular académico:
+RF018: El sistema deberá permitir agregar los oficios que el alumno le haya entregado (reportes, oficios, cartas, etc.)
+y agregar los reportes de visita.
+RF019: El sistema deberá generar una platilla para los reportes de visitas.
+•	Alumno:
+RF020: El sistema deberá generar una plantilla para los reportes de presentación en clase.
+RF021: El sistema deberá registrar las horas de entrada y salida.
+•	Titular de dependencia:
+RF021: El sistema deberá permitir el registro (previamente esta institución deberá de haber sido registrada por la 
+coordinación y se usará como referencia el correo electrónico)
 3.3.	Requisitos de rendimiento
 3.4.	Restricciones de diseño
 3.5.	Atributos del sistema
